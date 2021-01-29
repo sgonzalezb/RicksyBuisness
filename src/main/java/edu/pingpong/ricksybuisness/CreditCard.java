@@ -5,6 +5,7 @@ public class CreditCard {
     private String name;
     private String number;
     private Double credit;
+    private final String SYMBOL = "EZI";
     
 
 
@@ -12,7 +13,6 @@ public class CreditCard {
         this.name = name;
         this.number = number;
         this.credit = 3000.0d;
-        private final String SYMBOL = "EZI";
         
         
     }
@@ -31,7 +31,8 @@ public class CreditCard {
     @Override
     public String toString (){
         return  "owner: "+ getOwner() + "\n"+
-                "number: "+ getNumber() + "\n";
+                "number: "+ getNumber() + "\n"+
+                "credit: "+ getCredit()+SYMBOL + "\n";
     }
 
 

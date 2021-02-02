@@ -2,32 +2,41 @@ package edu.pingpong.ricksybuisness;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
+import org.junit.Before;
 import org.junit.Test;
 
-public class RicksyBuisnessTest 
-{
-    @Test
-    public void constructor_test(){
-        CreditCard card = new CreditCard("Rick","9874585");
-        assertNotNull(card);
 
+public class RicksyBuisnessTest{
+    
+    private  CreditCard card = null;
+    
+    @Before
+    public void setup_card() {
+        this.card = new CreditCard("Rick", "123456789");
+        assertNotNull(card);
     }
+
     @Test
-    public void getOwner_test(){
-        CreditCard card= new CreditCard("Rick","9874585");
-        assertEquals("Rick", card.getOwner());
+    public void constructor_test() {
+        assertNotNull(this.card);
     }
+
     
     @Test
-    public void getNumber(){
-        CreditCard card = new CreditCard("Rick", "9874585");
-        assertEquals("9874585", card.getNumber());
+    public void getNumber_test(){
+        assertEquals("123456789", this.card.getNumber());
+    }
+
+
+    @Test
+    public void getOwner_test() {
+        assertEquals("Rick", this.card.getOwner());  
+    
+    
     }
 
     @Test
-    public void getCredit(){
-        CreditCard credit = new CreditCard("Ricksy", "987654321");
-        assertEquals("3000.0", credit.getCredit());
+    public void getCredit_test(){
+        assertEquals("3000.0", this.card.getCredit());
     }
 }

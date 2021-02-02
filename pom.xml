@@ -51,6 +51,17 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>edu.pingpong.ricksybuisness.RicksyBusiness</mainClass>
+              </manifest>
+              <manifestEntries>
+                <url>http://maven.apache.org/shared/maven-archiver/examples/classpath.html</url>
+            </manifestEntries>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
